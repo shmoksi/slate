@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: API Filmix
 
 language_tabs:
   - shell
@@ -19,11 +19,124 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Filmix API!
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Board orders
 
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+## Variables
+### board-orders-shortstory.tpl, board-orders-fullstory.tpl
+
+Parameter | Value | Description
+--------- | ------- | -----------
+{order-id} |  | ID замовлення
+{order-date} |  | Дата додавання замовлення
+[my-order] |  | Виводити тільки, якщо твоє замовлення або для всіх адмінів
+{order-url} | | Посилання на замовлення
+{order-type} | | Тип замовлення
+{order-name} | | Назва замовлення
+[order-originname] | | Якщо оригінальна назва замовлення є, то виводити
+{order-originname} | | Оригінальна назва замовлення
+[order-year] | | Якщо рік замовлення є, то виводити
+{order-year} | | Рік замовлення
+[order-source-url] | | Якщо посилання джерела є, то виводити
+{order-source-url} | | Посилання джерела
+[order-source-url] | | Якщо посилання джерела є, то виводити
+{order-source-url} | | Посилання джерела
+{order-source-hash-url} | | Зашифроване посилання на джерело
+[order-information] | | Якщо додаткова інформація є, то виводити
+{order-information} | | Додаткова інформація
+{order-comments} | | К-сть коментарів
+{order-author-url} | | Посилання на автора
+{order-author} | | Ім'я автора
+
+### board-orders-shortstory.tpl, board-orders-fullstory.tpl
+
+Parameter | Value | Description
+--------- | ------- | -----------
+{color-rating} | red,green,'' | Колір рейтингу
+{order-rating} | | К-сть рейтингу
+
+### board-orders-list.tpl
+
+Parameter | Value | Description
+--------- | ------- | -----------
+{board-orders-list} | | Цикл шортсторі замовлень
+
+## API requests
+
+
+```javascript
+result = {
+  field: "",
+  message: {
+    author: "oksi",
+    comments_count: "0",
+    created_at: "2017-02-08 17:31:16",
+    description: "Хочу цей серіал на сайт",
+    id: "8",
+    name: "Дневники Вампира",
+    original_name: "The Vampire Diaries",
+    prod_year: "2006",
+    rating_neg: "0",
+    rating_pos: "0",
+    source_link: "https://myshows.me/view/25119/",
+    type: "Сериал",
+    user_id: "17"
+  }
+  type: "error"
+}
+```
+
+### Create order
+
+#### HTTP Request
+
+`POST /api/orders/create`
+
+#### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+type | true | Можливі варіанти: фільм, серіал, саундтрек, торрент, інше.
+name | true | Назва фільму чи іншого.
+original_name | false | Оригінальна назва.
+prod_year | false | Рік.
+source_link | false | Посилання на джерело.
+description | false | Додаткова інформація (макс. символів - 2000).
+
+```javascript
+result = {
+  field: "",
+  message: {
+    author: "oksi",
+    comments_count: "0",
+    created_at: "2017-02-08 17:31:16",
+    description: "Хочу цей серіал на сайт",
+    id: "8",
+    name: "Дневники Вампира",
+    original_name: "The Vampire Diaries",
+    prod_year: "2006",
+    rating_neg: "0",
+    rating_pos: "0",
+    source_link: "https://myshows.me/view/25119/",
+    type: "Сериал",
+    user_id: "17"
+  }
+  type: "error"
+}
+```
+
+### Get info order
+
+#### HTTP Request
+
+`POST /api/orders/info`
+
+#### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+id | true | Id замовлення.
 
 # Authentication
 
