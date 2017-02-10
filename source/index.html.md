@@ -2,7 +2,7 @@
 title: API Filmix
 
 language_tabs:
-  - javascript
+  - json
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -17,6 +17,14 @@ search: true
 # Introduction
 
 Welcome to the Filmix API!
+
+# Fullstory
+
+##Variables
+
+Parameter | Value | Description
+--------- | ------- | -----------
+{notes-list} |  | циклом виводитиме `note-shortstory.tpl`
 
 # Board orders
 
@@ -59,10 +67,9 @@ Parameter | Value | Description
 --------- | ------- | -----------
 {board-orders-list} | | Цикл шортсторі замовлень
 
-## API requests
+## Create order
 
-
-```javascript
+```json
 result = {
   field: "",
   message: {
@@ -84,13 +91,11 @@ result = {
 }
 ```
 
-### Create order
-
-#### HTTP Request
+### HTTP Request
 
 `POST /api/orders/create`
 
-#### Query Parameters
+### Query Parameters
 
 Parameter | Required | Description
 --------- | ------- | -----------
@@ -100,6 +105,8 @@ original_name | false | Оригінальна назва.
 prod_year | false | Рік.
 source_link | false | Посилання на джерело.
 description | false | Додаткова інформація (макс. символів - 2000).
+
+## Get info order
 
 ```javascript
 result = {
@@ -123,14 +130,37 @@ result = {
 }
 ```
 
-### Get info order
-
-#### HTTP Request
+### HTTP Request
 
 `POST /api/orders/info`
 
-#### Query Parameters
+### Query Parameters
 
 Parameter | Required | Description
 --------- | ------- | -----------
 id | true | Id замовлення.
+
+# Notes
+
+## Variables
+
+### note-shortstory.tpl
+
+Parameter | Required | Description
+--------- | ------- | -----------
+{note-id} | | ID замітки
+{note-text} | | Текст замітки
+[notes-list] | | Якщо це сторінка всіх заміток, то виводити блок
+{note-date} | | Час створення замітки
+
+## Create note
+
+### HTTP Request
+
+`POST /api/notes/create`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+
