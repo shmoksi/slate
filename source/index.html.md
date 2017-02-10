@@ -140,7 +140,7 @@ Parameter | Required | Description
 --------- | ------- | -----------
 id | true | Id замовлення.
 
-## Get info order
+## Delete order
 
 ```javascript
 result = {
