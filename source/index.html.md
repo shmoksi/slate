@@ -69,7 +69,7 @@ Parameter | Value | Description
 
 ## Create order
 
-```json
+```javascript
 result = {
   field: "",
   message: {
@@ -133,6 +133,26 @@ result = {
 ### HTTP Request
 
 `POST /api/orders/info`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+id | true | Id замовлення.
+
+## Get info order
+
+```javascript
+result = {
+  field: "",
+  message: "Заказ удален."
+  type: "success"
+}
+```
+
+### HTTP Request
+
+`POST /api/orders/delete`
 
 ### Query Parameters
 
