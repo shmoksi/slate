@@ -91,7 +91,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;json&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -101,7 +101,7 @@
     <div class="tocify-wrapper">
       <img src="images/logo.png" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="json">json</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -120,6 +120,24 @@
         <h1 id="introduction">Introduction</h1>
 
 <p>Welcome to the Filmix API!</p>
+
+<h1 id="fullstory">Fullstory</h1>
+
+<h2 id="variables">Variables</h2>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{notes-list}</td>
+<td></td>
+<td>циклом виводитиме <code class="prettyprint">note-shortstory.tpl</code></td>
+</tr>
+</tbody></table>
 
 <h1 id="board-orders">Board orders</h1>
 
@@ -273,34 +291,32 @@
 </tr>
 </tbody></table>
 
-<h2 id="api-requests">API requests</h2>
-<pre class="highlight javascript"><code><span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">field</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-  <span class="na">message</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">author</span><span class="p">:</span> <span class="s2">"oksi"</span><span class="p">,</span>
-    <span class="na">comments_count</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
-    <span class="na">created_at</span><span class="p">:</span> <span class="s2">"2017-02-08 17:31:16"</span><span class="p">,</span>
-    <span class="na">description</span><span class="p">:</span> <span class="s2">"Хочу цей серіал на сайт"</span><span class="p">,</span>
-    <span class="na">id</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
-    <span class="na">name</span><span class="p">:</span> <span class="s2">"Дневники Вампира"</span><span class="p">,</span>
-    <span class="na">original_name</span><span class="p">:</span> <span class="s2">"The Vampire Diaries"</span><span class="p">,</span>
-    <span class="na">prod_year</span><span class="p">:</span> <span class="s2">"2006"</span><span class="p">,</span>
-    <span class="na">rating_neg</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
-    <span class="na">rating_pos</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
-    <span class="na">source_link</span><span class="p">:</span> <span class="s2">"https://myshows.me/view/25119/"</span><span class="p">,</span>
-    <span class="na">type</span><span class="p">:</span> <span class="s2">"Сериал"</span><span class="p">,</span>
-    <span class="na">user_id</span><span class="p">:</span> <span class="s2">"17"</span>
-  <span class="p">}</span>
-  <span class="nl">type</span><span class="p">:</span> <span class="s2">"error"</span>
-<span class="p">}</span>
-</code></pre>
-<h3 id="create-order">Create order</h3>
-
-<h4 id="http-request">HTTP Request</h4>
+<h2 id="create-order">Create order</h2>
+<pre class="highlight json"><code><span class="err">result</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">field:</span><span class="w"> </span><span class="nt">""</span><span class="err">,</span><span class="w">
+  </span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">author:</span><span class="w"> </span><span class="nt">"oksi"</span><span class="err">,</span><span class="w">
+    </span><span class="err">comments_count</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="err">created_at</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-08 17:31:16"</span><span class="p">,</span><span class="w">
+    </span><span class="err">description</span><span class="p">:</span><span class="w"> </span><span class="s2">"Хочу цей серіал на сайт"</span><span class="p">,</span><span class="w">
+    </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="s2">"Дневники Вампира"</span><span class="p">,</span><span class="w">
+    </span><span class="err">original_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Vampire Diaries"</span><span class="p">,</span><span class="w">
+    </span><span class="err">prod_year</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006"</span><span class="p">,</span><span class="w">
+    </span><span class="err">rating_neg</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="err">rating_pos</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="err">source_link</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myshows.me/view/25119/"</span><span class="p">,</span><span class="w">
+    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"Сериал"</span><span class="p">,</span><span class="w">
+    </span><span class="err">user_id</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+  </span><span class="err">type:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /api/orders/create</code></p>
 
-<h4 id="query-parameters">Query Parameters</h4>
+<h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
 <tr>
@@ -340,6 +356,8 @@
 <td>Додаткова інформація (макс. символів - 2000).</td>
 </tr>
 </tbody></table>
+
+<h2 id="get-info-order">Get info order</h2>
 <pre class="highlight javascript"><code><span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">field</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
   <span class="na">message</span><span class="p">:</span> <span class="p">{</span>
@@ -360,13 +378,11 @@
   <span class="nl">type</span><span class="p">:</span> <span class="s2">"error"</span>
 <span class="p">}</span>
 </code></pre>
-<h3 id="get-info-order">Get info order</h3>
-
-<h4 id="http-request">HTTP Request</h4>
+<h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /api/orders/info</code></p>
 
-<h4 id="query-parameters">Query Parameters</h4>
+<h3 id="query-parameters">Query Parameters</h3>
 
 <table><thead>
 <tr>
@@ -380,6 +396,58 @@
 <td>true</td>
 <td>Id замовлення.</td>
 </tr>
+</tbody></table>
+
+<h1 id="notes">Notes</h1>
+
+<h2 id="variables">Variables</h2>
+
+<h3 id="note-shortstory-tpl">note-shortstory.tpl</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>{note-id}</td>
+<td></td>
+<td>ID замітки</td>
+</tr>
+<tr>
+<td>{note-text}</td>
+<td></td>
+<td>Текст замітки</td>
+</tr>
+<tr>
+<td>[notes-list]</td>
+<td></td>
+<td>Якщо це сторінка всіх заміток, то виводити блок</td>
+</tr>
+<tr>
+<td>{note-date}</td>
+<td></td>
+<td>Час створення замітки</td>
+</tr>
+</tbody></table>
+
+<h2 id="create-note">Create note</h2>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/notes/create</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
 </tbody></table>
 
           <h1 id="errors">Errors</h1>
@@ -443,7 +511,7 @@
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="json">json</a>
           </div>
       </div>
     </div>
