@@ -292,26 +292,26 @@
 </tbody></table>
 
 <h2 id="create-order">Create order</h2>
-<pre class="highlight json"><code><span class="err">result</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="err">field:</span><span class="w"> </span><span class="nt">""</span><span class="err">,</span><span class="w">
-  </span><span class="err">message</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">author:</span><span class="w"> </span><span class="nt">"oksi"</span><span class="err">,</span><span class="w">
-    </span><span class="err">comments_count</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="err">created_at</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-08 17:31:16"</span><span class="p">,</span><span class="w">
-    </span><span class="err">description</span><span class="p">:</span><span class="w"> </span><span class="s2">"Хочу цей серіал на сайт"</span><span class="p">,</span><span class="w">
-    </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
-    </span><span class="err">name</span><span class="p">:</span><span class="w"> </span><span class="s2">"Дневники Вампира"</span><span class="p">,</span><span class="w">
-    </span><span class="err">original_name</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Vampire Diaries"</span><span class="p">,</span><span class="w">
-    </span><span class="err">prod_year</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006"</span><span class="p">,</span><span class="w">
-    </span><span class="err">rating_neg</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="err">rating_pos</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-    </span><span class="err">source_link</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://myshows.me/view/25119/"</span><span class="p">,</span><span class="w">
-    </span><span class="err">type</span><span class="p">:</span><span class="w"> </span><span class="s2">"Сериал"</span><span class="p">,</span><span class="w">
-    </span><span class="err">user_id</span><span class="p">:</span><span class="w"> </span><span class="s2">"17"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-  </span><span class="err">type:</span><span class="w"> </span><span class="s2">"error"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
+<pre class="highlight javascript"><code><span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">field</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="na">message</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">author</span><span class="p">:</span> <span class="s2">"oksi"</span><span class="p">,</span>
+    <span class="na">comments_count</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+    <span class="na">created_at</span><span class="p">:</span> <span class="s2">"2017-02-08 17:31:16"</span><span class="p">,</span>
+    <span class="na">description</span><span class="p">:</span> <span class="s2">"Хочу цей серіал на сайт"</span><span class="p">,</span>
+    <span class="na">id</span><span class="p">:</span> <span class="s2">"8"</span><span class="p">,</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s2">"Дневники Вампира"</span><span class="p">,</span>
+    <span class="na">original_name</span><span class="p">:</span> <span class="s2">"The Vampire Diaries"</span><span class="p">,</span>
+    <span class="na">prod_year</span><span class="p">:</span> <span class="s2">"2006"</span><span class="p">,</span>
+    <span class="na">rating_neg</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+    <span class="na">rating_pos</span><span class="p">:</span> <span class="s2">"0"</span><span class="p">,</span>
+    <span class="na">source_link</span><span class="p">:</span> <span class="s2">"https://myshows.me/view/25119/"</span><span class="p">,</span>
+    <span class="na">type</span><span class="p">:</span> <span class="s2">"Сериал"</span><span class="p">,</span>
+    <span class="na">user_id</span><span class="p">:</span> <span class="s2">"17"</span>
+  <span class="p">}</span>
+  <span class="nl">type</span><span class="p">:</span> <span class="s2">"error"</span>
+<span class="p">}</span>
+</code></pre>
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /api/orders/create</code></p>
@@ -381,6 +381,33 @@
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">POST /api/orders/info</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>true</td>
+<td>Id замовлення.</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-info-order">Get info order</h2>
+<pre class="highlight javascript"><code><span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">field</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="na">message</span><span class="p">:</span> <span class="s2">"Заказ удален."</span>
+  <span class="na">type</span><span class="p">:</span> <span class="s2">"success"</span>
+<span class="p">}</span>
+</code></pre>
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/orders/delete</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
